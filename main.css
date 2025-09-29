@@ -1,0 +1,386 @@
+/* Базовые настройки */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+}
+
+/* Полноэкранный фон */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.fullscreen-bg__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Главное меню */
+.main-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 131, 0, 0.9);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.menu-list {
+  gap: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  padding: 0.5rem 1rem;
+  margin-right: 20px;
+}
+
+.menu-link {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu-link:hover, .menu-link.active {
+  background-color: #0a3306;
+  color: #cfd307;
+}
+
+.menu-link.active {
+  color: #cfd307;
+  background-color: unset;
+}
+
+/* Контейнер для блоков */
+.slides-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  padding-top: 0; /* Отступ для меню */
+}
+
+/* Стили для каждого блока */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+}
+
+.slide:last-child {
+  scroll-snap-align: end;
+}
+
+/* Разные фоны для блоков
+.slide:nth-child(1) {
+  background-color: rgba(52, 152, 219, 0.7);
+}
+.slide:nth-child(2) {
+  background-color: rgba(155, 89, 182, 0.7);
+}
+.slide:nth-child(3) {
+  background-color: rgba(26, 188, 156, 0.7);
+}
+
+.slide:nth-child(4) {
+  background-color: rgba(188, 26, 120, 0.7);
+} */
+
+/* Стили для контента */
+.slide-content {
+  width: 80%;
+  max-width: 90%;
+  max-height: calc(100vh - 12rem); /* Высота минус отступы */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
+  justify-content: center;
+}
+
+/* Расскомментируйте или добавьте фоны для теста */
+/* .slide:nth-child(1) { background-color: rgba(139, 195, 74, 0.7); }
+.slide:nth-child(2) { background-color: rgba(255, 150, 31, 0.7); }
+.slide:nth-child(3) { background-color: rgba(33, 150, 243, 0.7); }
+.slide:nth-child(4) { background-color: rgba(244, 67, 54, 0.7); }
+.slide:nth-child(5) { background-color: rgba(156, 39, 176, 0.7); } */
+
+
+.slide-content img {
+  max-width: 60%;
+  max-height: 20vh;
+  margin-bottom: 2rem;
+  object-fit: contain;
+}
+
+.slide-content h1,
+.slide-content h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.slide-content h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.slide-content p {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 0;
+
+}
+
+.slide-content ul {
+  list-style: none;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+  padding-left: 0;
+  text-align: center;
+}
+
+.slide-content ul li h3::before,
+#slide6 ul li::before {
+  content: "✔";
+  color: #cfd307;
+  position: relative;
+  right: 1%;
+}
+
+/* Стили для таблиц (добавьте, чтобы избежать переполнения) */
+.slide-content table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  color: white;
+  table-layout: fixed; /* Фиксирует ширину, предотвращает разрастяжку */
+}
+
+.slide-content table th,
+.slide-content table td {
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  overflow: hidden; /* Скрывает переполнение в ячейках */
+  text-overflow: ellipsis; /* ... для длинного текста */
+}
+
+.btn {
+  display: inline-block;
+  background-color: rgba(0, 131, 0, 0.9);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: all 0.3s ease;
+  padding: 0.8rem 2rem;
+  font-size: 1.5rem;
+  margin-top: auto; /* Прижимаем кнопку к низу контейнера */
+}
+
+.btn:hover {
+  background-color: #cfd307;
+  transform: translateY(-0.2rem);
+  font-weight: bold;
+}
+
+/* Навигационные точки */
+.dots-nav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #cfd307;
+  transform: scale(1.3);
+}
+
+/* Анимация перехода */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .main-menu {
+    padding: 0.5rem 0;
+  }
+  
+  .menu-list {
+    gap: 0.5rem;
+  }
+  
+  .menu-link {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+  }
+  
+  .dots-nav {
+    right: 1rem;
+  }
+  
+  .slides-container {
+    padding-top: 5rem;
+  }
+
+  .slide {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  .slide-content {
+    max-height: calc(100vh - 10rem);
+    padding: 1.5rem;
+    width: 95%;
+    overflow-y: auto; /* Скролл внутри контента если нужно */
+  }
+  
+  .slide-content img {
+    max-width: 80%;
+    max-height: 15vh;
+  }
+
+  #slide3 p,
+  #slide5 p {
+    display: none;
+  }
+}
+
+
+/* Для очень маленьких экранов */
+@media (max-height: 600px) {
+  .slide-content {
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+  
+  .slide-content img {
+    max-height: 10vh;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content h1 {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+  }
+  
+  .slide-content p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .menu-list {
+    display: none; /* Скрыть меню на мобильных устройствах по умолчанию */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item {
+    margin: 10px 0;
+  }
+
+  .menu-item:last-child {
+    margin-right: 0;
+  }
+
+  .hamburger {
+    display: block; /* Показать гамбургер-меню */
+    cursor: pointer;
+    font-size: 30px;
+    color: #cfd307;
+  }
+
+  /* Когда меню открыто, показываем его */
+  .main-menu.active .menu-list {
+    display: flex;
+  }
+
+  .slide-content {
+    overflow-y: auto; 
+  }
+}
+
+/* Стили для гамбургера */
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+}
