@@ -61,7 +61,7 @@ html, body {
   padding: 0.5rem 1rem;
   border-radius: 0.4rem;
   color: #fff;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -155,21 +155,21 @@ html, body {
 
 .slide-content h1,
 .slide-content h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.2rem, 2.67vw, 1.67rem);
   margin: 0 0 1.5rem 0;
   line-height: 1.3;
   text-align: center;
 }
 
 .slide-content h3 {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(0.93rem, 2vw, 1.33rem);
   margin: 0 0 1rem 0;
   line-height: 1.3;
   text-align: center;
 }
 
 .slide-content p {
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-size: clamp(0.8rem, 1.67vw, 1rem);
   line-height: 1.4;
   text-align: center;
   margin-top: 0;
@@ -178,7 +178,7 @@ html, body {
 
 .slide-content ul {
   list-style: none;
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-size: clamp(0.8rem, 1.67vw, 1rem);
   line-height: 1.4;
   padding-left: 0;
   text-align: center;
@@ -207,7 +207,7 @@ html, body {
   padding: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   text-align: center;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.67rem, 1.33vw, 0.8rem);
   overflow: hidden; /* Скрывает переполнение в ячейках */
   text-overflow: ellipsis; /* ... для длинного текста */
 }
@@ -220,7 +220,7 @@ html, body {
   border-radius: 0.4rem;
   transition: all 0.3s ease;
   padding: 0.8rem 2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: auto; /* Прижимаем кнопку к низу контейнера */
 }
 
@@ -269,20 +269,20 @@ html, body {
   .main-menu {
     padding: 0.5rem 0;
   }
-  
+
   .menu-list {
     gap: 0.5rem;
   }
-  
+
   .menu-link {
-    font-size: 1.4rem;
+    font-size: 0.93rem;
     padding: 0.5rem;
   }
-  
+
   .dots-nav {
     right: 1rem;
   }
-  
+
   .slides-container {
     padding-top: 5rem;
   }
@@ -291,14 +291,14 @@ html, body {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
-  
+
   .slide-content {
     max-height: calc(100vh - 10rem);
     padding: 1.5rem;
     width: 95%;
     overflow-y: auto; /* Скролл внутри контента если нужно */
   }
-  
+
   .slide-content img {
     max-width: 80%;
     max-height: 15vh;
@@ -317,20 +317,20 @@ html, body {
     transform: scale(0.9);
     transform-origin: center;
   }
-  
+
   .slide-content img {
     max-height: 10vh;
     margin-bottom: 1rem;
   }
-  
+
   .slide-content h1 {
     margin-bottom: 0.8rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
-  
+
   .slide-content p {
     margin-bottom: 1.2rem;
-    font-size: 1.1rem;
+    font-size: 0.73rem;
   }
 }
 
@@ -357,7 +357,7 @@ html, body {
   .hamburger {
     display: block; /* Показать гамбургер-меню */
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     color: #cfd307;
   }
 
@@ -367,7 +367,7 @@ html, body {
   }
 
   .slide-content {
-    overflow-y: auto; 
+    overflow-y: auto;
   }
 }
 
